@@ -1,0 +1,227 @@
+{
+  "PwC Malaysia": {
+    "website": "https://www.pwc.com/my/en/",
+    "logo_url": "https://static.wixstatic.com/media/c49edf_90b653339c3647e9990bf251ab903674~mv2.jpg/v1/fill/w_1000,h_1000,al_c,q_85,usm_0.66_1.00_0.01/c49edf_90b653339c3647e9990bf251ab903674~mv2.jpg",
+    "fallback_asset": "company_logos/pwc-malaysia.svg"
+  },
+  "EY Malaysia": {
+    "website": "https://www.ey.com/en_my",
+    "logo_url": "https://www.ey.com/adobe/dynamicmedia/deliver/dm-aid--2e164449-7d5b-4828-a1c6-dc58e7e78c6f/ey-logo-black.png?preferwebp=true&quality=85&width=3600",
+    "fallback_asset": "company_logos/ey-malaysia.svg"
+  },
+  "KPMG Malaysia": {
+    "website": "https://kpmg.com/my/en/home.html",
+    "logo_url": "https://www.mof.gov.my/portal/images/2021/09/17/pa-16921a1_large.jpg",
+    "fallback_asset": "company_logos/kpmg-malaysia.svg"
+  },
+  "Deloitte Malaysia": {
+    "website": "https://www.deloitte.com/southeast-asia/en/about/malaysia.html",
+    "logo_url": "https://cdn2-assets.talendo.ch/uploads/logo_image_item/file/52292e0c763fd027c6eba6b8f494d2eb/1738735771/deloitte-logo-talendo.jpg",
+    "fallback_asset": "company_logos/deloitte-malaysia.svg"
+  },
+  "BDO Malaysia": {
+    "website": "https://www.bdo.my/",
+    "logo_url": "https://icons.duckduckgo.com/ip3/www.bdo.my.ico",
+    "fallback_asset": "company_logos/bdo-malaysia.svg"
+  },
+  "Grant Thornton Malaysia": {
+    "website": "https://www.grantthornton.com.my/",
+    "logo_url": "https://www.grantthornton.com/content/dam/grantthornton/website/assets/Images/gt_logo/gt-logo-1200X627.jpg",
+    "fallback_asset": "company_logos/grant-thornton-malaysia.svg"
+  },
+  "Maybank": {
+    "website": "https://www.maybank2u.com.my/",
+    "logo_url": "https://cdn.i.haymarketmedia.asia/?c=0&n=campaign-asia%2Fcontent%2Fmaybank-logo.png",
+    "fallback_asset": "company_logos/maybank.svg"
+  },
+  "CIMB": {
+    "website": "https://www.cimb.com/en.html",
+    "logo_url": "https://static.wixstatic.com/media/991fe6_c5eb97353d914740a233d0def84be9b0~mv2.jpg/v1/fill/w_625,h_625,al_c,q_85,enc_avif,quality_auto/LOGO%20AYOF%20PARTNERS_300px-03.jpg",
+    "fallback_asset": "company_logos/cimb.svg"
+  },
+  "RHB Banking Group": {
+    "website": "https://www.rhbgroup.com/",
+    "logo_url": "https://icons.duckduckgo.com/ip3/www.rhbgroup.com.ico",
+    "fallback_asset": "company_logos/rhb-banking-group.svg"
+  },
+  "Hong Leong Bank": {
+    "website": "https://www.hlb.com.my/",
+    "logo_url": "https://icons.duckduckgo.com/ip3/www.hlb.com.my.ico",
+    "fallback_asset": "company_logos/hong-leong-bank.svg"
+  },
+  "Accenture Malaysia": {
+    "website": "https://www.accenture.com/my-en",
+    "logo_url": "https://assets.santanderopenacademy.com/uploaded/programs/16d47d4a-64b7-49a2-a405-0dfc73f2045b",
+    "fallback_asset": "company_logos/accenture-malaysia.svg"
+  },
+  "Maxis": {
+    "website": "https://www.maxis.com.my/",
+    "logo_url": "https://cdn1.productnation.co/stg/sites/1/5fc4aefb22b2f.jpeg",
+    "fallback_asset": "company_logos/maxis.svg"
+  },
+  "CelcomDigi": {
+    "website": "https://www.celcomdigi.com/",
+    "logo_url": "https://logo9.net/userfiles/images/9celcomdigi.jpg",
+    "fallback_asset": "company_logos/celcomdigi.svg"
+  },
+  "AirAsia": {
+    "website": "https://www.airasia.com/",
+    "logo_url": "https://i.pinimg.com/736x/99/bf/9c/99bf9cc51cc8f7841b0c67fb44cd4344.jpg",
+    "fallback_asset": "company_logos/airasia.svg"
+  },
+  "Grab": {
+    "website": "https://www.grab.com/my/en/",
+    "logo_url": "https://logos-world.net/wp-content/uploads/2023/03/Grab-Logo.jpg",
+    "fallback_asset": "company_logos/grab.svg"
+  },
+  "Shopee Malaysia": {
+    "website": "https://shopee.com.my/",
+    "logo_url": "https://www.buyandship.com.tw/contents/uploads/2022/01/Verdun-santoku-knife-4.jpg",
+    "fallback_asset": "company_logos/shopee-malaysia.svg"
+  },
+  "Sunway Group": {
+    "website": "https://www.sunway.com.my/",
+    "logo_url": "https://simplywall.st/cdn-cgi/image/format=auto,fit=cover,q=80,blur=0,metadata=none/https:/images.simplywall.st/asset/logos/www.sunway.com.my?size=92",
+    "fallback_asset": "company_logos/sunway-group.svg"
+  },
+  "Lazada Malaysia": {
+    "website": "https://www.lazada.com.my/",
+    "logo_url": "https://autobacs.com.my/images/0_autobacs/our_partners/logo-lazada.jpg",
+    "fallback_asset": "company_logos/lazada-malaysia.svg"
+  },
+  "PETRONAS": {
+    "website": "https://www.petronas.com/",
+    "logo_url": "https://www.petronas.com/integrated-report-2021/images/petronas-new-logo.png",
+    "fallback_asset": "company_logos/petronas.svg"
+  },
+  "Touch n Go Digital": {
+    "website": "https://www.tngdigital.com.my/",
+    "logo_url": "https://icons.duckduckgo.com/ip3/www.tngdigital.com.my.ico",
+    "fallback_asset": "company_logos/touch-n-go-digital.svg"
+  },
+  "AirAsia MOVE": {
+    "website": "https://www.airasia.com/",
+    "logo_url": "https://www.capitala.com/images/img/logo_move.png",
+    "fallback_asset": "company_logos/airasia-move.svg"
+  },
+  "Carsome": {
+    "website": "https://www.carsome.my/",
+    "logo_url": "https://icons.duckduckgo.com/ip3/www.carsome.my.ico",
+    "fallback_asset": "company_logos/carsome.svg"
+  },
+  "Astro": {
+    "website": "https://www.astro.com.my/",
+    "logo_url": "https://astro-malaysia.com/cdn/shop/files/Astro_logo_-_Magenta_-_Copy.png?height=628&pad_color=ffffff&v=1679130554&width=1200",
+    "fallback_asset": "company_logos/astro.svg"
+  },
+  "REV Media Group": {
+    "website": "https://revmedia.my/",
+    "logo_url": "https://icons.duckduckgo.com/ip3/revmedia.my.ico",
+    "fallback_asset": "company_logos/rev-media-group.svg"
+  },
+  "PropertyGuru Malaysia": {
+    "website": "https://www.propertyguru.com.my/",
+    "logo_url": "https://cdn.pgimgs.com/hive-ui/static/v0.1.3/images/pg-small.png",
+    "fallback_asset": "company_logos/propertyguru-malaysia.svg"
+  },
+  "Shell Malaysia": {
+    "website": "https://www.shell.com.my/",
+    "logo_url": "https://files.ajobthing.com/employers/176633-1711327194.png",
+    "fallback_asset": "company_logos/shell-malaysia.svg"
+  },
+  "Intel Malaysia": {
+    "website": "https://www.intel.com/content/www/us/en/jobs/locations/malaysia.html",
+    "logo_url": "https://blob.cloudcomputing.id/images/2c8a9a71-04b2-4f60-bac2-5a630877e06f/logo-intel-l-min.jpg",
+    "fallback_asset": "company_logos/intel-malaysia.svg"
+  },
+  "Infineon Technologies Malaysia": {
+    "website": "https://www.infineon.com/",
+    "logo_url": "https://web14.bernama.com/storage/photos/58284a8ca292a00adc7da66ddb4d61d564ccad31d5a11",
+    "fallback_asset": "company_logos/infineon-technologies-malaysia.svg"
+  },
+  "Bosch Malaysia": {
+    "website": "https://www.bosch.com.my/",
+    "logo_url": "https://icons.duckduckgo.com/ip3/www.bosch.com.my.ico",
+    "fallback_asset": "company_logos/bosch-malaysia.svg"
+  },
+  "Western Digital Malaysia": {
+    "website": "https://www.westerndigital.com/",
+    "logo_url": "https://logo800.cn/uploads/shiliang/25/logo800_16491868535912486.jpg",
+    "fallback_asset": "company_logos/western-digital-malaysia.svg"
+  },
+  "Keysight Technologies Malaysia": {
+    "website": "https://www.keysight.com/",
+    "logo_url": "https://web14.bernama.com/storage/photos/68e4d6b106db0003160bfc886fc8eaa95eb568cd6ca29",
+    "fallback_asset": "company_logos/keysight-technologies-malaysia.svg"
+  },
+  "Siemens Malaysia": {
+    "website": "https://www.siemens.com/my/en.html",
+    "logo_url": "https://icons.duckduckgo.com/ip3/www.siemens.com.ico",
+    "fallback_asset": "company_logos/siemens-malaysia.svg"
+  },
+  "Tenaga Nasional Berhad": {
+    "website": "https://www.tnb.com.my/",
+    "logo_url": "https://icons.duckduckgo.com/ip3/www.tnb.com.my.ico",
+    "fallback_asset": "company_logos/tenaga-nasional-berhad.svg"
+  },
+  "Gamuda": {
+    "website": "https://gamuda.com.my/",
+    "logo_url": "https://assets.nst.com.my/images/articles/Untitled_design_%2886%29_1753941165.jpg",
+    "fallback_asset": "company_logos/gamuda.svg"
+  },
+  "Nestle Malaysia": {
+    "website": "https://www.nestle.com.my/",
+    "logo_url": "https://icons.duckduckgo.com/ip3/www.nestle.com.my.ico",
+    "fallback_asset": "company_logos/nestle-malaysia.svg"
+  },
+  "Unilever Malaysia": {
+    "website": "https://www.unilever.com.my/",
+    "logo_url": "https://icons.duckduckgo.com/ip3/www.unilever.com.my.ico",
+    "fallback_asset": "company_logos/unilever-malaysia.svg"
+  },
+  "Sunway Medical Centre": {
+    "website": "https://www.sunwaymedical.com/",
+    "logo_url": "https://icons.duckduckgo.com/ip3/www.sunwaymedical.com.ico",
+    "fallback_asset": "company_logos/sunway-medical-centre.svg"
+  },
+  "KPJ Healthcare": {
+    "website": "https://kpjhealth.com.my/",
+    "logo_url": "https://assets.nst.com.my/images/articles/kpj_1582708041.jpg",
+    "fallback_asset": "company_logos/kpj-healthcare.svg"
+  },
+  "Pantai Hospital Kuala Lumpur": {
+    "website": "https://www.pantai.com.my/kuala-lumpur",
+    "logo_url": "https://icons.duckduckgo.com/ip3/www.pantai.com.my.ico",
+    "fallback_asset": "company_logos/pantai-hospital-kuala-lumpur.svg"
+  },
+  "Gleneagles Hospital Kuala Lumpur": {
+    "website": "https://gleneagles.com.my/kuala-lumpur",
+    "logo_url": "https://icons.duckduckgo.com/ip3/gleneagles.com.my.ico",
+    "fallback_asset": "company_logos/gleneagles-hospital-kuala-lumpur.svg"
+  },
+  "HELP University": {
+    "website": "https://help.edu.my/",
+    "logo_url": "https://studynext.com/my/sites/default/files/2023-10/institution_help.png",
+    "fallback_asset": "company_logos/help-university.svg"
+  },
+  "Taylors University": {
+    "website": "https://university.taylors.edu.my/",
+    "logo_url": "https://cdn1.npcdn.net/images/17673244247fde3d886da1136a744303ba0abb58eb.jpg?md5id=7144e2ba113bacdd760b73ae7478c74e&new_height=1000&new_width=1000&type=9&w=1745910990",
+    "fallback_asset": "company_logos/taylors-university.svg"
+  },
+  "Sunway University": {
+    "website": "https://sunwayuniversity.edu.my/",
+    "logo_url": "https://cdn1.npcdn.net/images/1760498885b925abb1c06fa1413e0eeb1b68d2ca60.webp?from=jpg&md5id=7144e2ba113bacdd760b73ae7478c74e&new_height=1000&new_width=1000&type=9&w=1745910990",
+    "fallback_asset": "company_logos/sunway-university.svg"
+  },
+  "AIA Malaysia": {
+    "website": "https://www.aia.com.my/",
+    "logo_url": "https://www.contactcenterworld.com/images/company/aia-berhad-1200px-logo.jpg",
+    "fallback_asset": "company_logos/aia-malaysia.svg"
+  },
+  "PETRONAS Digital": {
+    "website": "https://www.petronas.com/",
+    "logo_url": "https://www.petronas.com/integrated-report-2021/images/petronas-new-logo.png",
+    "fallback_asset": "company_logos/petronas-digital.svg"
+  }
+}

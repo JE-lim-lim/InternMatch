@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Choose Your Account | InternMatch</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="auth-choice">
+  <main class="auth-choice-page">
+    <header class="auth-choice-topbar">
+      <a class="brand-img-link" href="index.html" aria-label="InternMatch home"><span class="theme-brand"><img class="brand-img brand-light" src="assets/logo.png" alt="InternMatch"><img class="brand-img brand-dark" src="assets/logo_login_signup.png" alt="InternMatch"></span></a>
+      <div class="auth-choice-header-actions"><div class="auth-nav" id="authNav"></div><a class="back-browse" href="jobs.html">← Continue browsing jobs</a></div>
+    </header>
+    <section class="auth-choice-hero">
+      <div class="auth-choice-kicker">Welcome to InternMatch</div>
+      <h1 id="authChoiceTitle">How would you like to join?</h1>
+      <p id="authChoiceSubtitle">Choose the account that fits what you want to do. You can still browse internships without signing in.</p>
+    </section>
+    <section class="auth-choice-grid" aria-label="Choose account type">
+      <article class="auth-choice-card">
+        <div class="auth-choice-icon" aria-hidden="true">♧</div>
+        <h2>Job Seeker</h2>
+        <p>Discover internships and find roles that fit your skills, studies and career goals.</p>
+        <ul>
+          <li>Explore and save internships</li>
+          <li>Use AI Job Match and Career Toolkit</li>
+          <li>Manage your student profile</li>
+        </ul>
+        <a class="btn btn-primary" data-choice-role="student" href="signup.html">Sign up as a Job Seeker →</a>
+      </article>
+      <article class="auth-choice-card employer">
+        <div class="auth-choice-icon" aria-hidden="true">▦</div>
+        <h2>Employer</h2>
+        <p>Introduce your company and publish internship opportunities for students to discover.</p>
+        <ul>
+          <li>Create a company account</li>
+          <li>Publish and update internships</li>
+          <li>Manage your own job listings</li>
+        </ul>
+        <a class="btn btn-outline" data-choice-role="employer" href="employer-auth.html?mode=signup">Sign up as an Employer →</a>
+      </article>
+    </section>
+    <p class="auth-choice-switch"><span id="authChoiceSwitchPrompt">Already have an account?</span> <a id="authChoiceSwitchLink" href="auth-choice.html?mode=login">Log in instead</a></p>
+  </main>
+  <script src="app.js"></script>
+  <script src="employer.js"></script>
+</body>
+</html>

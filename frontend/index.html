@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>InternMatch</title>
+  <script>
+    document.documentElement.classList.add('im-nav-pending');
+    try {
+      if (sessionStorage.getItem('im_employer_nav_hint') === '1') document.documentElement.classList.add('im-employer-nav');
+    } catch (_) {}
+    try {
+      const p = JSON.parse(localStorage.getItem('im_display_preferences') || '{}');
+      document.documentElement.dataset.theme = p.theme === 'dark' ? 'dark' : 'light';
+      document.documentElement.dataset.fontSize = ['small','default','large'].includes(p.fontSize) ? p.fontSize : 'default';
+      document.documentElement.dataset.density = p.density === 'compact' ? 'compact' : 'comfortable';
+    } catch (e) { document.documentElement.dataset.theme = 'light'; }
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="home">
+  <header class="site-header">
+    <a class="brand-img-link" href="index.html">
+      <span class="theme-brand"><img class="brand-img brand-light" src="assets/logo.png" alt="InternMatch"><img class="brand-img brand-dark" src="assets/logo_login_signup.png" alt="InternMatch"></span>
+    </a>
+    <nav class="main-nav">
+      <a data-nav="jobs" href="jobs.html">Job Search</a>
+      <a data-nav="match" href="match.html">AI Job Match</a>
+      <a data-nav="career" href="career.html">Career Info</a>
+      <a data-nav="tools" href="career-tools.html">Career Toolkit</a>
+      <a data-nav="employer-dashboard" class="employer-dashboard-nav" href="employer-dashboard.html">Employer Dashboard</a>
+    </nav>
+    <div class="auth-nav" id="authNav"></div>
+  </header>
+  <main class="page">
+    <section class="hero-reference hero-carousel" aria-label="InternMatch introduction">
+      <div class="hero-carousel-viewport" aria-hidden="true">
+        <div class="hero-carousel-track">
+          <img src="assets/ads/ad1.jpg" alt="">
+          <img src="assets/ads/ad2.jpg" alt="">
+          <img src="assets/ads/ad3.jpg" alt="">
+          <img src="assets/ads/ad4.jpg" alt="">
+          <img src="assets/ads/ad5.jpg" alt="">
+          <img src="assets/ads/ad6.jpg" alt="">
+          <img src="assets/ads/ad7.jpg" alt="">
+          <img src="assets/ads/ad8.jpg" alt="">
+          <img src="assets/ads/ad1.jpg" alt="">
+          <img src="assets/ads/ad2.jpg" alt="">
+          <img src="assets/ads/ad3.jpg" alt="">
+          <img src="assets/ads/ad4.jpg" alt="">
+          <img src="assets/ads/ad5.jpg" alt="">
+          <img src="assets/ads/ad6.jpg" alt="">
+          <img src="assets/ads/ad7.jpg" alt="">
+          <img src="assets/ads/ad8.jpg" alt="">
+        </div>
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="hero-copy-ref">
+        <h1>Find Your Internship<br>Without the Stress</h1>
+        <p>Discover internship opportunities,<br>match your skills with job requirements,<br>and explore career paths — all in one place.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="auth-choice.html?mode=signup">Get Started →</a>
+          <a class="btn btn-hero-outline" href="jobs.html">Explore Internships</a>
+        </div>
+      </div>
+      <div class="hero-lavender-fade" aria-hidden="true"></div>
+    </section>
+    <section class="home-block" id="about">
+      <div class="section-ribbon">About Us</div>
+      <div class="home-inner">
+        <h2>Built for internship discovery</h2>
+        <p class="home-lead">InternMatch combines focused internship search, AI-assisted profile matching and simple career exploration in one student-friendly experience.</p>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="mini-icon">⌕</div>
+            <h3>Search Smarter</h3>
+            <p>Filter internships by field, location, work mode, duration and monthly allowance.</p>
+          </article>
+          <article class="feature-card">
+            <div class="mini-icon">AI</div>
+            <h3>Understand Your Match</h3>
+            <p>Use your profile or resume to identify matching skills and possible career directions.</p>
+          </article>
+          <article class="feature-card">
+            <div class="mini-icon">☼</div>
+            <h3>Explore Careers</h3>
+            <p>Learn what different careers do, which skills matter and which internships connect to them.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="home-block" id="faq">
+      <div class="section-ribbon">FAQ</div>
+      <div class="faq-card">
+        <p>
+          <b>Is InternMatch only for internships?</b><br>
+          <span>Yes. InternMatch focuses on student internship discovery and career preparation.</span>
+        </p>
+        <p>
+          <b>Does AI guarantee that I am suitable for a role?</b><br>
+          <span>No. Match results are guidance based on the information provided, not hiring decisions.</span>
+        </p>
+        <p>
+          <b>Can I upload a resume?</b><br>
+          <span>Yes. The AI Job Match page supports PDF or text resumes.</span>
+        </p>
+      </div>
+    </section>
+    <section class="home-block" id="contact">
+      <div class="section-ribbon">Contact Us</div>
+      <div class="contact-grid">
+        <a class="contact-item" href="https://gmail.com" target="_blank" rel="noopener">
+          <img src="assets/gmail.png" alt="Gmail">
+          <span>internmatch@gmail.com</span>
+        </a>
+        <a class="contact-item" href="https://facebook.com" target="_blank" rel="noopener">
+          <img src="assets/facebook.png" alt="Facebook">
+          <span>InternMatch Official</span>
+        </a>
+        <a class="contact-item" href="https://instagram.com" target="_blank" rel="noopener">
+          <img src="assets/instagram.png" alt="Instagram">
+          <span>internmatch.official</span>
+        </a>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <a class="brand-img-link" href="index.html">
+      <span class="theme-brand"><img class="brand-img footer-logo brand-light" src="assets/logo.png" alt="InternMatch"><img class="brand-img footer-logo brand-dark" src="assets/logo_login_signup.png" alt="InternMatch"></span>
+    </a>
+    <div class="footer-right">
+      <div class="footer-links">
+        <a href="index.html#about">About Us</a>
+        <span>|</span>
+        <a href="index.html#faq">FAQ</a>
+        <span>|</span>
+        <a href="index.html#contact">Contact Us</a>
+      </div>
+      <small>Copyright © 2026 InternMatch</small>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

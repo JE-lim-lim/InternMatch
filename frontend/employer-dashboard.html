@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Employer Dashboard | InternMatch</title>
+  <script>
+    document.documentElement.classList.add('im-nav-pending', 'im-employer-nav');
+    try {
+      const p = JSON.parse(localStorage.getItem('im_display_preferences') || '{}');
+      document.documentElement.dataset.theme = p.theme === 'dark' ? 'dark' : 'light';
+      document.documentElement.dataset.fontSize = ['small','default','large'].includes(p.fontSize) ? p.fontSize : 'default';
+      document.documentElement.dataset.density = p.density === 'compact' ? 'compact' : 'comfortable';
+    } catch (e) { document.documentElement.dataset.theme = 'light'; }
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="employer-dashboard">
+  <header class="site-header employer-site-header employer-site-nav">
+    <a class="brand-img-link" href="index.html"><span class="theme-brand"><img class="brand-img brand-light" src="assets/logo.png" alt="InternMatch"><img class="brand-img brand-dark" src="assets/logo_login_signup.png" alt="InternMatch"></span></a>
+    <nav class="main-nav employer-main-nav" aria-label="Employer navigation">
+      <a data-nav="jobs" href="jobs.html">Job Search</a>
+      <a data-nav="match" href="match.html">AI Job Match</a>
+      <a data-nav="career" href="career.html">Career Info</a>
+      <a data-nav="tools" href="career-tools.html">Career Toolkit</a>
+      <a data-nav="employer-dashboard" href="employer-dashboard.html" class="employer-dashboard-nav active" aria-current="page">Employer Dashboard</a>
+    </nav>
+    <div class="employer-header-right">
+      <div class="auth-nav" id="authNav"></div>
+      <button class="btn btn-primary" type="button" id="employerLogout">Log out</button>
+    </div>
+  </header>
+  <main class="employer-dashboard-page">
+    <section class="employer-dashboard-hero">
+      <div>
+        <div class="eyebrow">EMPLOYER WORKSPACE</div>
+        <h1 id="employerWelcome">Your internship listings</h1>
+        <p>Create opportunities students can discover on InternMatch.</p>
+      </div>
+      <button class="btn btn-primary" id="newInternshipButton" type="button">＋ Post an Internship</button>
+    </section>
+    <div id="employerDashboardMessage" class="employer-dashboard-message" role="status" hidden></div>
+    <section class="employer-stat-grid" aria-label="Listing statistics">
+      <article class="employer-stat"><span>Total listings</span><strong id="employerTotalJobs">—</strong></article>
+      <article class="employer-stat"><span>Active listings</span><strong id="employerActiveJobs">—</strong></article>
+      <article class="employer-stat"><span>Company</span><strong id="employerCompanyStat" style="font-size:1.15rem;line-height:1.35">—</strong></article>
+    </section>
+    <section class="employer-dashboard-grid">
+      <article class="employer-panel" id="employerJobFormPanel">
+        <h2 id="employerJobFormTitle">Post a new internship</h2>
+        <p class="employer-panel-intro">Fields marked * are required. All other fields are optional.</p>
+        <form class="employer-job-form" id="employerJobForm">
+          <div class="employer-form-grid">
+            <div class="full"><label for="listingTitle">Internship title *</label><input id="listingTitle" required maxlength="120" placeholder="e.g. Data Analyst Intern"></div>
+            <div><label for="listingField">Internship field *</label><select id="listingField" required><option value="">Choose a field</option><option>Accounting</option><option>Business</option><option>Data Science</option><option>Design</option><option>Engineering</option><option>Marketing</option><option>Psychology</option><option>Software / IT</option><option>Human Resources & Recruitment</option><option>Supply Chain & Logistics</option><option>Customer Service & Customer Experience</option><option>Cybersecurity</option><option>Legal & Compliance</option><option>Hospitality & Tourism</option><option>Education & Training</option><option>Procurement & Vendor Management</option></select></div>
+            <div><label for="listingLocation">Location *</label><input id="listingLocation" required placeholder="e.g. Kuala Lumpur / Remote"></div>
+            <div><label for="listingWorkMode">Work mode *</label><select id="listingWorkMode" required><option>On-site</option><option>Hybrid</option><option>Remote</option></select></div>
+            <div><label for="listingDuration">Duration *</label><select id="listingDuration" required><option value="">Choose duration</option><option>2-3 months</option><option>4-6 months</option><option>6+ months</option></select></div>
+            <div><label for="listingAllowance">Monthly allowance *</label><input id="listingAllowance" required placeholder="e.g. RM1,000 / month"></div>
+            <div class="full"><label for="listingRequired">Required skills *</label><input id="listingRequired" required placeholder="Separate skills with commas, e.g. Excel, SQL, Python"></div>
+            <div class="full"><label for="listingPreferred">Preferred skills <span style="font-weight:500;color:#858095">(optional)</span></label><input id="listingPreferred" placeholder="e.g. Power BI, Communication"></div>
+            <div class="full"><label for="listingDescription">Internship description *</label><textarea id="listingDescription" required maxlength="5000" placeholder="Explain the role, day-to-day work and what the intern may learn."></textarea></div>
+            <div class="full"><label for="listingResponsibilities">Responsibilities <span style="font-weight:500;color:#858095">(optional; one per line)</span></label><textarea id="listingResponsibilities" placeholder="Assist with reporting&#10;Support project research&#10;Prepare weekly summaries"></textarea></div>
+            <div class="full"><label for="listingAboutCompany">About your company <span style="font-weight:500;color:#858095">(optional)</span></label><textarea id="listingAboutCompany" placeholder="A brief company introduction"></textarea></div>
+            <div class="full"><label for="listingWebsite">Company website / application page <span style="font-weight:500;color:#858095">(optional)</span></label><input id="listingWebsite" type="url" placeholder="https://www.example.com/careers"></div>
+          </div>
+          <div class="employer-form-actions">
+            <button class="btn btn-primary" type="submit" id="saveListingButton">Publish Internship</button>
+            <button class="btn btn-outline" type="button" id="cancelListingEdit" hidden>Cancel edit</button>
+          </div>
+          <p class="employer-help-note">Published listings are added to the same internship catalogue used by Job Search. Please ensure your role details and application link are accurate.</p>
+        </form>
+      </article>
+      <article class="employer-panel">
+        <h2>Your internship listings</h2>
+        <p class="employer-panel-intro">Review, edit or remove positions published by your company.</p>
+        <div id="employerJobList" class="employer-job-list"><div class="employer-empty">Loading your listings…</div></div>
+      </article>
+    </section>
+  </main>
+  <script src="app.js"></script>
+  <script src="employer.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AI Job Match | InternMatch</title>
+  <script>
+    document.documentElement.classList.add('im-nav-pending');
+    try {
+      if (sessionStorage.getItem('im_employer_nav_hint') === '1') document.documentElement.classList.add('im-employer-nav');
+    } catch (_) {}
+    try {
+      const p = JSON.parse(localStorage.getItem('im_display_preferences') || '{}');
+      document.documentElement.dataset.theme = p.theme === 'dark' ? 'dark' : 'light';
+      document.documentElement.dataset.fontSize = ['small','default','large'].includes(p.fontSize) ? p.fontSize : 'default';
+      document.documentElement.dataset.density = p.density === 'compact' ? 'compact' : 'comfortable';
+    } catch (e) { document.documentElement.dataset.theme = 'light'; }
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="match">
+  <header class="site-header">
+    <a class="brand-img-link" href="index.html">
+      <span class="theme-brand"><img class="brand-img brand-light" src="assets/logo.png" alt="InternMatch"><img class="brand-img brand-dark" src="assets/logo_login_signup.png" alt="InternMatch"></span>
+    </a>
+    <nav class="main-nav">
+      <a data-nav="jobs" href="jobs.html">Job Search</a>
+      <a data-nav="match" href="match.html">AI Job Match</a>
+      <a data-nav="career" href="career.html">Career Info</a>
+      <a data-nav="tools" href="career-tools.html">Career Toolkit</a>
+      <a data-nav="employer-dashboard" class="employer-dashboard-nav" href="employer-dashboard.html">Employer Dashboard</a>
+    </nav>
+    <div class="auth-nav" id="authNav"></div>
+  </header>
+  <main class="page">
+    <section class="section match-section">
+      <div class="section-head">
+        <div>
+          <h1>AI Job Match</h1>
+          <p>Your profile and selected internship are filled in automatically. Upload your resume and check your match.</p>
+        </div>
+      </div>
+      <div id="selectedJobNotice" class="match-job-context hidden" aria-live="polite"></div>
+      <div class="match-grid">
+        <div class="card match-background">
+          <h3>Your background</h3>
+          <label for="profile">Profile / skills / interests (auto-filled)</label>
+          <textarea id="profile" placeholder="Your education, skills, projects and experience will appear here."></textarea>
+          <p class="match-field-help">Your saved student profile is used when available. Otherwise, a starter description is added automatically. You can edit it any time.</p>
+          <label for="resume">Upload your resume (PDF or TXT)</label>
+          <input class="upload" id="resume" type="file" accept=".pdf,.txt">
+          <label for="jd">Selected Job Description (auto-filled)</label>
+          <textarea id="jd" placeholder="Choose a job from Job Search and click Check AI Match to fill this automatically, or paste a job description here."></textarea>
+          <p class="match-field-help">When you start from a job listing, the role details, responsibilities and required skills are included automatically.</p>
+          <button class="btn btn-primary match-btn" type="button" onclick="analyze()">Check AI Match →</button>
+          <div id="loading" class="note hidden" role="status">Checking your resume against the internship...</div>
+        </div>
+        <div class="card match-job-panel">
+          <h3>How Well Do You Match This Internship?</h3>
+          <div id="jobMatchResult"><div class="empty">Select an internship and click Check AI Match to see your score and skill gaps.</div></div>
+        </div>
+        <div class="card match-career-panel">
+          <h3>Discover Your Career Direction</h3>
+          <div id="result"><div class="empty">Your career direction prediction will appear here.</div></div>
+        </div>
+      </div>
+      <section class="suggested-section">
+        <div class="suggested-head">
+          <div>
+            <h2>Suggested Internship</h2>
+            <p id="suggestedHint">Your best-fit internships will appear here after analysis.</p>
+          </div>
+          <a id="viewMoreSuggested" class="btn btn-outline hidden" href="jobs.html">View More Internships</a>
+        </div>
+        <div id="suggestedJobs" class="job-grid"></div>
+      </section>
+    </section>
+  </main>
+  <footer class="footer">
+    <a class="brand-img-link" href="index.html">
+      <span class="theme-brand"><img class="brand-img footer-logo brand-light" src="assets/logo.png" alt="InternMatch"><img class="brand-img footer-logo brand-dark" src="assets/logo_login_signup.png" alt="InternMatch"></span>
+    </a>
+    <div class="footer-right">
+      <div class="footer-links">
+        <a href="index.html#about">About Us</a>
+        <span>|</span>
+        <a href="index.html#faq">FAQ</a>
+        <span>|</span>
+        <a href="index.html#contact">Contact Us</a>
+      </div>
+      <small>Copyright © 2026 InternMatch</small>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

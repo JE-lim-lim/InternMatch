@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sign Up | InternMatch</title>
+  <script>
+    document.documentElement.classList.add('im-nav-pending');
+    try {
+      const p = JSON.parse(localStorage.getItem('im_display_preferences') || '{}');
+      document.documentElement.dataset.theme = p.theme === 'dark' ? 'dark' : 'light';
+      document.documentElement.dataset.fontSize = ['small','default','large'].includes(p.fontSize) ? p.fontSize : 'default';
+      document.documentElement.dataset.density = p.density === 'compact' ? 'compact' : 'comfortable';
+    } catch (e) { document.documentElement.dataset.theme = 'light'; }
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand-img-link" href="index.html">
+      <span class="theme-brand"><img class="brand-img brand-light" src="assets/logo.png" alt="InternMatch"><img class="brand-img brand-dark" src="assets/logo_login_signup.png" alt="InternMatch"></span>
+    </a>
+    <nav class="main-nav">
+      <a href="jobs.html">Job Search</a>
+      <a href="match.html">AI Job Match</a>
+      <a href="career.html">Career Info</a>
+    </nav>
+    <div class="auth-nav" id="authNav"></div>
+  </header>
+  <main class="page auth-page">
+    <section class="auth-side">
+      <div class="auth-side-content">
+        <img class="auth-logo" src="assets/logo_login_signup.png" alt="InternMatch">
+        <h1>Start your<br>internship journey</h1>
+        <p>Create a profile, save internships and keep your<br>matching information in one place.</p>
+      </div>
+    </section>
+    <section class="auth-form-wrap">
+      <form class="auth-card" id="signupForm">
+        <h2>Create account</h2>
+        <p>Join InternMatch in a few seconds.</p>
+        <label>Full Name</label>
+        <input id="signupName" type="text" required placeholder="Your name">
+        <label>Email</label>
+        <input id="signupEmail" type="email" required placeholder="you@example.com">
+        <label>Password</label>
+        <input id="signupPassword" type="password" required minlength="6" placeholder="Minimum 6 characters">
+        <label>Confirm Password</label>
+        <input id="signupConfirm" type="password" required placeholder="Repeat password">
+        <button class="btn btn-primary auth-submit" type="submit">Sign Up</button>
+        <div class="auth-switch">Already have an account? <a href="login.html">Login</a></div>
+        <div id="authMessage" class="note hidden"></div>
+      </form>
+    </section>
+  </main>
+  <footer class="footer">
+    <a class="brand-img-link" href="index.html">
+      <span class="theme-brand"><img class="brand-img footer-logo brand-light" src="assets/logo.png" alt="InternMatch"><img class="brand-img footer-logo brand-dark" src="assets/logo_login_signup.png" alt="InternMatch"></span>
+    </a>
+    <div class="footer-right">
+      <div class="footer-links">
+        <a href="index.html#about">About Us</a>
+        <span>|</span>
+        <a href="index.html#faq">FAQ</a>
+        <span>|</span>
+        <a href="index.html#contact">Contact Us</a>
+      </div>
+      <small>Copyright © 2026 InternMatch</small>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

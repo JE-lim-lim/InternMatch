@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>My Profile | InternMatch</title>
+  <script>
+    document.documentElement.classList.add('im-nav-pending');
+    try {
+      if (sessionStorage.getItem('im_employer_nav_hint') === '1') document.documentElement.classList.add('im-employer-nav');
+    } catch (_) {}
+    try {
+      const p = JSON.parse(localStorage.getItem('im_display_preferences') || '{}');
+      document.documentElement.dataset.theme = p.theme === 'dark' ? 'dark' : 'light';
+      document.documentElement.dataset.fontSize = ['small','default','large'].includes(p.fontSize) ? p.fontSize : 'default';
+      document.documentElement.dataset.density = p.density === 'compact' ? 'compact' : 'comfortable';
+    } catch (e) { document.documentElement.dataset.theme = 'light'; }
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand-img-link" href="index.html">
+      <span class="theme-brand"><img class="brand-img brand-light" src="assets/logo.png" alt="InternMatch"><img class="brand-img brand-dark" src="assets/logo_login_signup.png" alt="InternMatch"></span>
+    </a>
+    <nav class="main-nav">
+      <a data-nav="jobs" href="jobs.html">Job Search</a>
+      <a data-nav="match" href="match.html">AI Job Match</a>
+      <a data-nav="career" href="career.html">Career Info</a>
+      <a data-nav="tools" href="career-tools.html">Career Toolkit</a>
+      <a data-nav="employer-dashboard" class="employer-dashboard-nav" href="employer-dashboard.html">Employer Dashboard</a>
+    </nav>
+    <div class="auth-nav" id="authNav"></div>
+  </header>
+  <main class="page">
+    <section class="section profile-section">
+      <div class="section-head profile-head">
+        <div>
+          <h1 id="profilePageTitle">My Profile</h1>
+          <p id="profilePageSubtitle">Keep your personal information, skills and saved opportunities together.</p>
+        </div>
+      </div>
+      <div class="profile-grid">
+        <aside class="card profile-summary">
+          <div class="avatar" id="avatar">U</div>
+          <h2 id="profileName">Student</h2>
+          <p id="profileEmail">Not signed in</p>
+          <button class="btn btn-outline logout-btn" onclick="logout()">Logout</button>
+        </aside>
+        <div class="profile-stack">
+          <div class="card">
+            <h3>Personal Information</h3>
+            <div class="profile-form-grid">
+              <div>
+                <label>Full Name</label>
+                <input id="editName" type="text">
+              </div>
+              <div>
+                <label>Email</label>
+                <input id="editEmail" type="email" readonly>
+              </div>
+              <div>
+                <label>Age</label>
+                <input id="editAge" type="number" min="15" max="80" placeholder="e.g. 21">
+              </div>
+              <div>
+                <label>University / College</label>
+                <input id="editSchool" type="text" placeholder="e.g. TAR UMT">
+              </div>
+              <div>
+                <label>Course / Major</label>
+                <input id="editCourse" type="text" placeholder="e.g. Data Science">
+              </div>
+              <div>
+                <label>Current Study Year</label>
+                <select id="editStudyYear">
+                  <option value="">Select year</option>
+                  <option>Year 1</option>
+                  <option>Year 2</option>
+                  <option>Year 3</option>
+                  <option>Year 4</option>
+                  <option>Postgraduate</option>
+                </select>
+              </div>
+              <div class="full-span">
+                <label>Location</label>
+                <input id="editLocation" type="text" placeholder="e.g. Selangor">
+              </div>
+              <div class="full-span">
+                <label>Skills</label>
+                <textarea id="editSkills" placeholder="e.g. Python, SQL, Excel, Communication"></textarea>
+              </div>
+            </div>
+            <button class="btn btn-primary profile-save" onclick="saveProfile()">Save Profile</button>
+            <div id="profileMessage" class="note hidden"></div>
+          </div>
+          <div class="card">
+            <h3>Saved Internships</h3>
+            <div id="savedJobs"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <a class="brand-img-link" href="index.html">
+      <span class="theme-brand"><img class="brand-img footer-logo brand-light" src="assets/logo.png" alt="InternMatch"><img class="brand-img footer-logo brand-dark" src="assets/logo_login_signup.png" alt="InternMatch"></span>
+    </a>
+    <div class="footer-right">
+      <div class="footer-links">
+        <a href="index.html#about">About Us</a>
+        <span>|</span>
+        <a href="index.html#faq">FAQ</a>
+        <span>|</span>
+        <a href="index.html#contact">Contact Us</a>
+      </div>
+      <small>Copyright © 2026 InternMatch</small>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

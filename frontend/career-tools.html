@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Career Toolkit | InternMatch</title>
+  <script>
+    document.documentElement.classList.add('im-nav-pending');
+    try {
+      if (sessionStorage.getItem('im_employer_nav_hint') === '1') document.documentElement.classList.add('im-employer-nav');
+    } catch (_) {}
+    try {
+      const p = JSON.parse(localStorage.getItem('im_display_preferences') || '{}');
+      document.documentElement.dataset.theme = p.theme === 'dark' ? 'dark' : 'light';
+      document.documentElement.dataset.fontSize = ['small','default','large'].includes(p.fontSize) ? p.fontSize : 'default';
+      document.documentElement.dataset.density = p.density === 'compact' ? 'compact' : 'comfortable';
+    } catch (e) { document.documentElement.dataset.theme = 'light'; }
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="tools">
+  <header class="site-header">
+    <a class="brand-img-link" href="index.html"><span class="theme-brand"><img class="brand-img brand-light" src="assets/logo.png" alt="InternMatch"><img class="brand-img brand-dark" src="assets/logo_login_signup.png" alt="InternMatch"></span></a>
+    <nav class="main-nav">
+      <a data-nav="jobs" href="jobs.html">Job Search</a>
+      <a data-nav="match" href="match.html">AI Job Match</a>
+      <a data-nav="career" href="career.html">Career Info</a>
+      <a data-nav="tools" href="career-tools.html">Career Toolkit</a>
+      <a data-nav="employer-dashboard" class="employer-dashboard-nav" href="employer-dashboard.html">Employer Dashboard</a>
+    </nav>
+    <div class="auth-nav" id="authNav"></div>
+  </header>
+
+  <main class="page career-tools-page">
+    <section class="ct-hero">
+      <div class="ct-eyebrow">YOUR PERSONAL CAREER COMPANION</div>
+      <h1>Career Toolkit</h1>
+      <p>Understand your fit, identify skill gaps, build a realistic learning plan and practise for your next internship.</p>
+      <div class="ct-hero-pills"><span>Skill Gap Analysis</span><span>Explainable Match</span><span>Learning Roadmap</span><span>Interview Practice</span></div>
+    </section>
+
+    <section class="ct-input-layout">
+      <div class="card ct-input-card">
+        <div class="ct-section-heading"><div><span class="ct-step">STEP 1</span><h2>Tell us about your target role</h2></div><span class="ct-sparkle" aria-hidden="true">✦</span></div>
+        <div class="ct-form-grid">
+          <div class="ct-field ct-full">
+            <label for="ctProfile">Your profile, skills, projects and experience</label>
+            <textarea id="ctProfile" rows="7" placeholder="Example: I am a second-year student. I have used Python and SQL in coursework projects, created dashboards in Power BI, and worked with a team on a database application..."></textarea>
+            <small>Tip: add real coursework, projects, tools and what you personally contributed.</small>
+          </div>
+          <div class="ct-field ct-full">
+            <label for="ctJobSelect">Choose an internship to analyse</label>
+            <select id="ctJobSelect"><option value="">Loading internships...</option></select>
+            <small>Choose one of your listed internships or select “Custom job description”.</small>
+          </div>
+          <div class="ct-field ct-full" id="ctCustomJobWrap">
+            <label for="ctJobDescription">Paste the custom job description</label>
+            <textarea id="ctJobDescription" rows="4" placeholder="Paste the complete target job description here..."></textarea>
+            <small>Choose “Custom job description” above. The analyzer detects the skills it recognises; include explicit skill names in the text.</small>
+          </div>
+          <div class="ct-field ct-full">
+            <label for="ctResume">Resume file <span class="ct-optional">Optional · PDF or TXT · up to 8 MB</span></label>
+            <input id="ctResume" type="file" accept=".pdf,.txt">
+          </div>
+        </div>
+        <div class="ct-form-actions"><button class="btn btn-primary" id="ctAnalyseBtn" type="button" onclick="runCareerAnalysis()">Analyse my readiness <span aria-hidden="true">→</span></button><span class="ct-private-note">Your profile and application tracker are handled locally by this prototype; avoid uploading sensitive information.</span></div>
+        <div class="note hidden" id="ctLoading" role="status">Analysing your profile...</div>
+        <div class="ct-error hidden" id="ctError" role="alert"></div>
+      </div>
+      <aside class="card ct-how-card">
+        <div class="ct-how-icon">✦</div>
+        <h3>What you’ll get</h3>
+        <div class="ct-how-item"><span>01</span><div><b>Evidence-based match</b><p>See which requirements are already mentioned in your profile.</p></div></div>
+        <div class="ct-how-item"><span>02</span><div><b>Clear next steps</b><p>Turn skill gaps into a manageable four-week plan.</p></div></div>
+        <div class="ct-how-item"><span>03</span><div><b>Practice with purpose</b><p>Improve your resume evidence and rehearse role-specific answers.</p></div></div>
+        <div class="ct-disclaimer">Scores are guidance based on text evidence, not hiring probabilities. A skill not found in your profile may simply be undocumented.</div>
+      </aside>
+    </section>
+
+    <section class="ct-workspace">
+      <div class="ct-tabs" role="tablist" aria-label="Career Toolkit features">
+        <button class="ct-tab active" role="tab" aria-selected="true" data-tab="analysis" onclick="switchToolkitTab('analysis')">Readiness & Match</button>
+        <button class="ct-tab" role="tab" aria-selected="false" data-tab="roadmap" onclick="switchToolkitTab('roadmap')">Learning Roadmap</button>
+        <button class="ct-tab" role="tab" aria-selected="false" data-tab="resume" onclick="switchToolkitTab('resume')">Resume Assistant</button>
+        <button class="ct-tab" role="tab" aria-selected="false" data-tab="interview" onclick="switchToolkitTab('interview')">Mock Interview</button>
+        <button class="ct-tab" role="tab" aria-selected="false" data-tab="tracker" onclick="switchToolkitTab('tracker')">Application Tracker</button>
+      </div>
+
+      <section class="ct-panel active" id="ctPanel-analysis" role="tabpanel">
+        <div class="ct-panel-heading"><div><h2>Your readiness report</h2><p>Run the analysis above to see role-specific results.</p></div><span class="ct-report-label">CAREER INSIGHTS</span></div>
+        <div id="ctAnalysisResult" class="ct-empty-state"><div class="ct-empty-icon">◎</div><h3>Your results will appear here</h3><p>Choose a target internship, describe your profile and select <b>Analyse my readiness</b>.</p></div>
+      </section>
+
+      <section class="ct-panel" id="ctPanel-roadmap" role="tabpanel" hidden>
+        <div class="ct-panel-heading"><div><h2>Your four-week learning roadmap</h2><p>Start with required skills, practise with a small project, then prepare to apply.</p></div><span class="ct-report-label">NEXT STEPS</span></div>
+        <div id="ctRoadmapResult" class="ct-empty-state"><div class="ct-empty-icon">↗</div><h3>Your roadmap is waiting</h3><p>Run the analysis first so the plan can be tailored to a target internship.</p></div>
+      </section>
+
+      <section class="ct-panel" id="ctPanel-resume" role="tabpanel" hidden>
+        <div class="ct-panel-heading"><div><h2>Resume improvement assistant</h2><p>Make relevant evidence easier to find without inventing experience.</p></div><span class="ct-report-label">RESUME REVIEW</span></div>
+        <div id="ctResumeResult" class="ct-empty-state"><div class="ct-empty-icon">▤</div><h3>Get focused resume feedback</h3><p>Run the analysis with your profile or resume to see targeted suggestions.</p></div>
+      </section>
+
+      <section class="ct-panel" id="ctPanel-interview" role="tabpanel" hidden>
+        <div class="ct-panel-heading"><div><h2>Practise your interview answers</h2><p>Generate questions for your selected role and review structured feedback on your answers.</p></div><span class="ct-report-label">PRACTICE ROOM</span></div>
+        <div class="ct-interview-actions"><p>Answer in your own words. For experience questions, try Situation, Task, Action and Result (STAR).</p><button class="btn btn-primary" type="button" onclick="generateInterview()">Generate practice questions →</button></div>
+        <div id="ctInterviewResult" class="ct-interview-list"><div class="ct-empty-state"><div class="ct-empty-icon">✎</div><h3>Ready when you are</h3><p>Generate questions after selecting a target internship above.</p></div></div>
+      </section>
+
+      <section class="ct-panel" id="ctPanel-tracker" role="tabpanel" hidden>
+        <div class="ct-panel-heading"><div><h2>Internship application tracker</h2><p>Keep track of applications, deadlines and next steps in one place.</p></div><span class="ct-report-label">YOUR PIPELINE</span></div>
+        <div class="ct-tracker-add card"><div class="ct-field"><label for="ctTrackerJob">Add an internship</label><select id="ctTrackerJob"><option value="">Loading internships...</option></select></div><button class="btn btn-primary" type="button" onclick="addApplication()">+ Add to tracker</button></div>
+        <div id="ctTrackerStats" class="ct-tracker-stats"></div>
+        <div id="ctTrackerList" class="ct-tracker-list"><div class="ct-empty-state"><h3>No applications tracked yet</h3><p>Add an internship above to begin.</p></div></div>
+        <p class="ct-storage-note">Prototype note: tracker entries are saved in this browser using localStorage. They do not sync across devices or browsers.</p>
+      </section>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="brand-img-link" href="index.html"><span class="theme-brand"><img class="brand-img footer-logo brand-light" src="assets/logo.png" alt="InternMatch"><img class="brand-img footer-logo brand-dark" src="assets/logo_login_signup.png" alt="InternMatch"></span></a>
+    <div class="footer-right"><div class="footer-links"><a href="index.html#about">About Us</a><span>|</span><a href="index.html#faq">FAQ</a><span>|</span><a href="index.html#contact">Contact Us</a></div><small>Copyright © 2026 InternMatch</small></div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

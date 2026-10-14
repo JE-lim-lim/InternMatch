@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Employer Account | InternMatch</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="employer-auth">
+  <main class="employer-auth-page">
+    <header class="auth-choice-topbar">
+      <a class="brand-img-link" href="index.html" aria-label="InternMatch home"><span class="theme-brand"><img class="brand-img brand-light" src="assets/logo.png" alt="InternMatch"><img class="brand-img brand-dark" src="assets/logo_login_signup.png" alt="InternMatch"></span></a>
+      <div class="auth-choice-header-actions"><div class="auth-nav" id="authNav"></div><a class="back-browse" id="backToRoleChoice" href="auth-choice.html?mode=signup">← Change account type</a></div>
+    </header>
+    <section class="employer-auth-layout">
+      <aside class="employer-auth-side">
+        <div class="auth-choice-icon" aria-hidden="true">▦</div>
+        <div class="auth-choice-kicker" style="color:#fff">InternMatch for Employers</div>
+        <h1>Meet your next generation of talent.</h1>
+        <p>Create an employer account to share internship opportunities with students exploring their next step.</p>
+      </aside>
+      <div class="employer-auth-form-wrap">
+        <h2 id="employerAuthTitle">Create an employer account</h2>
+        <p id="employerAuthSubtitle">Set up your company profile to publish internships.</p>
+        <form class="employer-auth-form" id="employerAuthForm" novalidate>
+          <div id="employerSignupFields">
+            <label for="employerCompany">Company name</label>
+            <input id="employerCompany" name="company" autocomplete="organization" required placeholder="e.g. Example Sdn. Bhd.">
+            <label for="employerContact">Contact person</label>
+            <input id="employerContact" name="contact" autocomplete="name" required placeholder="Your full name">
+            <label for="employerWebsite">Company website <span style="font-weight:500;color:#858095">(optional)</span></label>
+            <input id="employerWebsite" name="website" type="url" autocomplete="url" placeholder="https://www.example.com">
+          </div>
+          <label for="employerEmail">Work email</label>
+          <input id="employerEmail" name="email" type="email" autocomplete="email" required placeholder="you@company.com">
+          <label for="employerPassword">Password</label>
+          <input id="employerPassword" name="password" type="password" autocomplete="current-password" minlength="8" required placeholder="At least 8 characters">
+          <div id="employerConfirmWrap">
+            <label for="employerConfirm">Confirm password</label>
+            <input id="employerConfirm" name="confirm" type="password" autocomplete="new-password" minlength="8" placeholder="Re-enter your password">
+          </div>
+          <button class="btn btn-primary employer-auth-submit" id="employerAuthSubmit" type="submit">Create Employer Account</button>
+          <div id="employerAuthMessage" class="employer-form-message" role="status" hidden></div>
+        </form>
+        <div class="employer-auth-switch"><span id="employerAuthSwitchPrompt">Already registered?</span> <a id="employerAuthSwitchLink" href="employer-auth.html?mode=login">Log in</a></div>
+      </div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+  <script src="employer.js"></script>
+</body>
+</html>

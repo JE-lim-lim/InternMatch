@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Internship Details | InternMatch</title>
+  <script>
+    document.documentElement.classList.add('im-nav-pending');
+    try {
+      if (sessionStorage.getItem('im_employer_nav_hint') === '1') document.documentElement.classList.add('im-employer-nav');
+    } catch (_) {}
+    try {
+      const p = JSON.parse(localStorage.getItem('im_display_preferences') || '{}');
+      document.documentElement.dataset.theme = p.theme === 'dark' ? 'dark' : 'light';
+      document.documentElement.dataset.fontSize = ['small','default','large'].includes(p.fontSize) ? p.fontSize : 'default';
+      document.documentElement.dataset.density = p.density === 'compact' ? 'compact' : 'comfortable';
+    } catch (e) { document.documentElement.dataset.theme = 'light'; }
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="jobs">
+  <header class="site-header">
+    <a class="brand-img-link" href="index.html">
+      <span class="theme-brand"><img class="brand-img brand-light" src="assets/logo.png" alt="InternMatch"><img class="brand-img brand-dark" src="assets/logo_login_signup.png" alt="InternMatch"></span>
+    </a>
+    <nav class="main-nav">
+      <a data-nav="jobs" href="jobs.html">Job Search</a>
+      <a data-nav="match" href="match.html">AI Job Match</a>
+      <a data-nav="career" href="career.html">Career Info</a>
+      <a data-nav="tools" href="career-tools.html">Career Toolkit</a>
+      <a data-nav="employer-dashboard" class="employer-dashboard-nav" href="employer-dashboard.html">Employer Dashboard</a>
+    </nav>
+    <div class="auth-nav" id="authNav"></div>
+  </header>
+  <main class="page">
+    <section class="section">
+      <div id="jobDetail">
+        <div class="empty">Loading internship details...</div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <a class="brand-img-link" href="index.html">
+      <span class="theme-brand"><img class="brand-img footer-logo brand-light" src="assets/logo.png" alt="InternMatch"><img class="brand-img footer-logo brand-dark" src="assets/logo_login_signup.png" alt="InternMatch"></span>
+    </a>
+    <div class="footer-right">
+      <div class="footer-links">
+        <a href="index.html#about">About Us</a>
+        <span>|</span>
+        <a href="index.html#faq">FAQ</a>
+        <span>|</span>
+        <a href="index.html#contact">Contact Us</a>
+      </div>
+      <small>Copyright © 2026 InternMatch</small>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
