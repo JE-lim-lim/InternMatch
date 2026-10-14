@@ -1,0 +1,10 @@
+[
+  {
+    "id": "edbe3db169164e80becddce9be599d79",
+    "company_name": "Yue",
+    "contact_name": "yue",
+    "email": "yuenan@gmail.com",
+    "website": "",
+    "password_hash": "scrypt:32768:8:1$mZ7j90x4fCyrvVLJ$cb3711acfee47e93f8d12bf5dd6dfc0042e22711909160171223115f6913d10c8764beca5a18535872b17fdd0f9da3e47ea5813bf1b23e332bc268351f2e0403"
+  }
+]

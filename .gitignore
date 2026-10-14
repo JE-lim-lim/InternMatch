@@ -1,0 +1,20 @@
+
+# Python virtual environment
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Secrets
+.env
+.env.*
+.internmatch_secret_key
+
+# Local employer data and temporary files
+employers.json
+employers.tmp
+
+# Other local files
+.DS_Store
